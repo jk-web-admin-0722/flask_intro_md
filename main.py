@@ -53,7 +53,10 @@ def meklet():
 
     return rezultats
 
-
+######## RECEPTES
+@app.route('/receptes')
+def receptes():
+    return render_template('receptes.html')
 
 if __name__ == '__main__':
     app.run(debug = True)
