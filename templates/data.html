@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% set lapa = 'data' %}
+
+{% block saturs %}
+    <h2>Dati no zinas.csv</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Vārds</th>
+                <th>Uzvārds</th>
+                <th>E-pasts</th>
+                <th>Ziņa</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for zina in zinas %}
+            <tr>
+                <td>{{ zina[0] }}</td>
+                <td>{{ zina[1] }}</td>
+                <td>{{ zina[2] }}</td>
+                <td>{{ zina[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

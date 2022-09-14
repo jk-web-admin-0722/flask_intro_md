@@ -3,10 +3,10 @@
 {% set lapa = 'forma' %}
 
 {% block saturs %}
-    <h1>Registration Form</h1>
+    <h2>Registration Form</h2>
     <p>Please fill out this form with the required information</p>
-    <h2>{{ message }}</h2>
-    <form action='/forma' method="POST">
+    <form action='/kontakti' method="POST">
+      <h3>{{ message }}</h3>
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>

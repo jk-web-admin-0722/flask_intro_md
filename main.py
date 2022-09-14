@@ -66,9 +66,31 @@ def burkanu():
 def grauzdinu():
     return render_template('grauzdinu.html')    
 
-@app.route('/kontakti')
+@app.route('/kontakti', methods = ['GET', 'POST'])
 def kontakti():
-    return render_template('kontakti.html')         
+    msg = ""
+    if request.method == 'POST':
+        firstname = request.form.get('first-name')
+        lastname =  request.form.get('last-name')
+        email = request.form.get('email')
+        text = request.form.get('text')
+        line = f"{firstname},{lastname},{email},{text}\n"
+        with open("zinas.csv", "a", encoding="utf-8") as f:
+            f.write(line)
+        
+        msg = "Paldies! Jūsu ziņa saņemta!"
+
+    return render_template('kontakti.html', message = msg)
+
+
+@app.route('/data')
+def data():
+    data = []
+    with open("zinas.csv", "r", encoding="utf-8") as f:
+        for rindina in f.readlines():
+            data.append(rindina.strip().split(','))
+
+    return render_template('data.html', zinas = data)
 
 if __name__ == '__main__':
     app.run(debug = True)
