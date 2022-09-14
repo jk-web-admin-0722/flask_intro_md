@@ -6,10 +6,6 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/kontakti')
-def kontakti():
-    return "Šeit mani kontakti"
-
 @app.route('/iepriekseja')
 def iepriekseja():
     return render_template('iepriekseja.html')
@@ -68,7 +64,11 @@ def burkanu():
 
 @app.route('/grauzdinu')
 def grauzdinu():
-    return render_template('grauzdinu.html')            
+    return render_template('grauzdinu.html')    
+
+@app.route('/kontakti')
+def kontakti():
+    return render_template('kontakti.html')         
 
 if __name__ == '__main__':
     app.run(debug = True)
