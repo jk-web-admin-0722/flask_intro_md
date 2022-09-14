@@ -12,11 +12,11 @@
 
     <ul class="nav">
         <li><a href="/">Sākums</a></li>
-        <li><a class="active" href="/receptes">Receptes</a></li>
-        <li><a href="/burkanu">Burkāni ar majonēzi</a></li>
-        <li><a href="/grauzdinu">Grauzdiņu salāti</a></li>
-        <li><a href="/biesu">Biešu siļķu salāti</a></li>
-        <li><a href="#">Kontakti</a></li>
+        <li><a {% if lapa == "receptes" %} class="active" {% endif %} href="/receptes">Receptes</a></li>
+        <li><a {% if lapa == "burkanu" %} class="active" {% endif %} href="/burkanu">Burkāni ar majonēzi</a></li>
+        <li><a {% if lapa == "grauzdinu" %} class="active" {% endif %} href="/grauzdinu">Grauzdiņu salāti</a></li>
+        <li><a {% if lapa == "biesu" %} class="active" {% endif %} href="/biesu">Biešu siļķu salāti</a></li>
+        <li><a {% if lapa == "#" %} class="active" {% endif %} href="#">Kontakti</a></li>
     </ul>
 
     <section>
