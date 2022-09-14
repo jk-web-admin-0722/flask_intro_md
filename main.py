@@ -58,5 +58,17 @@ def meklet():
 def receptes():
     return render_template('receptes.html')
 
+@app.route('/biesu')
+def biesu():
+    return render_template('biesu.html')
+
+@app.route('/burkanu')
+def burkanu():
+    return render_template('burkanu.html')
+
+@app.route('/grauzdinu')
+def grauzdinu():
+    return render_template('grauzdinu.html')            
+
 if __name__ == '__main__':
     app.run(debug = True)
