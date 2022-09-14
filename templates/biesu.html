@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="lv">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/receptes.css">
-    <title>Biešu</title>
-</head>
-<body>
-    <h1>Receptes</h1>
-
-    <ul class="nav">
-        <li><a href="/">Sākums</a></li>
-        <li><a href="/receptes">Receptes</a></li>
-        <li><a href="/burkanu">Burkāni ar majonēzi</a></li>
-        <li><a href="/grauzdinu">Grauzdiņu salāti</a></li>
-        <li><a class="active" href="/biesu">Biešu siļķu salāti</a></li>
-    </ul>
-
-    <section>
+{% extends "layout.html" %}
+        
+{% block saturs %}
         <h2>Biešu salāti ar siļķi.</h2>
 
         <img src="/static/atteli/biesu.jpg" alt="Biešu siļķu salāti.">
@@ -45,8 +27,4 @@
         </ol>
 
         <p><a href="https://gardedis.lv/biesu-salati-ar-silki/">Avots: gardedis.lv</a></p>
-        
-    </section>
-
-</body>
-</html>
+{% endblock %}

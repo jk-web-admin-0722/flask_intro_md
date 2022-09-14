@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/receptes.css">
+    <title>Receptes</title>
+</head>
+<body>
+    <h1>Receptes</h1>
+
+    <ul class="nav">
+        <li><a href="/">Sākums</a></li>
+        <li><a class="active" href="/receptes">Receptes</a></li>
+        <li><a href="/burkanu">Burkāni ar majonēzi</a></li>
+        <li><a href="/grauzdinu">Grauzdiņu salāti</a></li>
+        <li><a href="/biesu">Biešu siļķu salāti</a></li>
+        <li><a href="#">Kontakti</a></li>
+    </ul>
+
+    <section>
+        {% block saturs %}
+
+        {% endblock %}
+    </section>
+    
+    </body>
+</html>
