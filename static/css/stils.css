@@ -1,0 +1,29 @@
+h1 {
+    color: red;
+}
+
+h2, h3, h4 {
+    color:blue;
+}
+
+.apraksts {
+    color:rgb(21, 125, 154);
+}
+
+p.apraksts {
+    background-color: brown;
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid black;
+    /*border: 5px; -->
+    border-style: solid;
+    border-color: red;*/
+}
+
+i, em {
+    color: chartreuse;
+}
+
+#pirmais {
+    background-color: aqua;
+}
