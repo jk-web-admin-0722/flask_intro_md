@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from datubaze import visiDati, pievienotDatus
 
 app = Flask(__name__)
 
@@ -74,22 +75,36 @@ def kontakti():
         lastname =  request.form.get('last-name')
         email = request.form.get('email')
         text = request.form.get('text')
+        # rindina prieks CSV
         line = f"{firstname},{lastname},{email},{text}\n"
+
+        #rindina prieks DB ieraksta
+        dbLine = {'vards':firstname, 'uzvards':lastname, 'epasts':email, 'zina':text}
+
+        #rakstam iekšā CSV failā
         with open("zinas.csv", "a", encoding="utf-8") as f:
             f.write(line)
+
+        #rakstam iekšā Datubāzē
+        pievienotDatus(dbLine)
         
         msg = "Paldies! Jūsu ziņa saņemta!"
 
     return render_template('kontakti.html', message = msg)
 
 
-@app.route('/data')
-def data():
+@app.route('/dataCSV')
+def dataCSV():
     data = []
     with open("zinas.csv", "r", encoding="utf-8") as f:
         for rindina in f.readlines():
             data.append(rindina.strip().split(','))
 
+    return render_template('data.html', zinas = data)
+
+@app.route('/dataDB')
+def dataDB():
+    data = visiDati()
     return render_template('data.html', zinas = data)
 
 if __name__ == '__main__':
