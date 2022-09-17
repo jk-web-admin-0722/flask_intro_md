@@ -2,11 +2,17 @@
 
 {% set lapa = 'forma' %}
 
+{% block css %}
+<link rel="stylesheet" href="static/css/kontakti.css">
+{% endblock %}
+
 {% block saturs %}
     <h2>Registration Form</h2>
     <p>Please fill out this form with the required information</p>
     <form action='/kontakti' method="POST">
+      {% if message %}
       <h3>{{ message }}</h3>
+      {% endif %}
       <fieldset>
         <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
         <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
