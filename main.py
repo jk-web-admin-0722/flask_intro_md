@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from datubaze import visiDati, pievienotDatus
+from datubaze import visiDati, pievienotDatus, iegutDatus
 
 app = Flask(__name__)
 
@@ -104,8 +104,17 @@ def dataCSV():
 
 @app.route('/dataDB')
 def dataDB():
-    data = visiDati()
-    return render_template('data.html', zinas = data)
+    vards = request.args.get('vards')
+    if vards:
+        # Mēs gribam meklēt
+        data = iegutDatus(vards)
+    else:
+        # Nav parametra, negribam meklēt - atgriežam visu.
+        data = visiDati()
+
+    return render_template('dataDB.html', zinas = data, vards = vards)
+
+
 
 if __name__ == '__main__':
     app.run(debug = True)
